@@ -3,6 +3,5 @@ machine:
     version: 2.2.4
 
 test:
-  pre:
-    - echo 'Hello'
-    - rake
+  override:
+    - bundle exec rake

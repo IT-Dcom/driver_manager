@@ -166,6 +166,7 @@ DEPENDENCIES
   jquery-rails
   pry-rails
   rails (= 4.2.5.1)
+  rake (= 11.1.2)
   rubocop
   sass-rails (~> 5.0)
   spring

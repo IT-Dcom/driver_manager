@@ -9,18 +9,15 @@
         <span class='icon-bar'></span>
         <span class='icon-bar'></span>
       </button>
-      <a class='pull-left' href='<?php echo Uri::base(false); ?>'>
-        IMAGE
+      <a class='pull-left' href='<%= link_to '/' %>'>
+        <%= image_tag('livogis64.png', class: %w(livogis-img)) %>
       </a>
-      <a class='navbar-brand livogis-title'
-         href='<?php echo Uri::base(false); ?>'>
-        Livogis
-      </a>
+      <%= link_to 'Livogis', '/', class: %w(navbar-brand livogis-title) %>
     </div>
     <div style='height: 1px;' aria-expanded='false' id='navbar'
          class='navbar-collapse collapse'>
       <div class='nav navbar-right'>
-        <a href='/user/profil'>Lairan Alexandre IMAGE</a>
+        <a href='/user/profil'>Lairan Alexandre <%= image_tag('avatar64.png', class: %w(livogis-img)) %></a>
       </div>
     </div>
   </div>

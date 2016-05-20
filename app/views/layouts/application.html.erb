@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DriverManager</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <%= render 'layouts/head' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
 
-<%= yield %>
-
-</body>
+    <div class='container-fluid'>
+      <div class='row livogis-page'>
+        <div class='col-lg-2 sidebar'>
+          <%= render 'layouts/navbar' %>
+        </div>
+        <div class='col-lg-offset-2 col-lg-10
+                    col-md-12 content'>
+          <h2>DRIVER TITLE</h2>
+          <div class='livogis-content'>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  </body>
 </html>

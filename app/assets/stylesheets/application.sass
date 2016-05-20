@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets"
+@import "bootstrap"
+@import "data"
+
+body
+  margin-top: 64px
+  margin-bottom: 64px
+
+.livogis-page
+  margin-right: 0px
+  margin-left: 0px
+
+.content
+  @media screen AND (max-width: $screen-md-max)
+    margin-left: 32px
+  @media screen AND (min-width: $screen-md-min) AND (max-width: $screen-md-max)
+    width: auto
+
+.livogis-content
+  border: 1px black solid
+  margin: 5px
+  padding: 10px
+
+.livogis-chart
+  width: 100%
+  height: 400px
+
+.livogis-form-espacement > .col-sm-6 > .input-group
+  margin: 10px

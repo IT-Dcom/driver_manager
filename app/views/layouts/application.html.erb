@@ -15,6 +15,7 @@
                     col-md-12 content'>
           <h2><%= @title %></h2>
           <div class='livogis-content'>
+            <%= render 'layouts/flash_messages' %>
             <%= yield %>
           </div>
         </div>

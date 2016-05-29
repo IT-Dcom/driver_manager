@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420185950) do
+ActiveRecord::Schema.define(version: 20160529122438) do
 
   create_table "clients", force: :cascade do |t|
     t.datetime "name"
@@ -23,42 +23,32 @@ ActiveRecord::Schema.define(version: 20160420185950) do
   end
 
   create_table "drivers", force: :cascade do |t|
-    t.datetime "first_name"
-    t.datetime "last_name"
-    t.datetime "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "insurances", force: :cascade do |t|
-    t.datetime "name"
-    t.datetime "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "first_name", limit: 255, null: false
+    t.string   "last_name",  limit: 255, null: false
+    t.string   "address",    limit: 255, null: false
   end
 
   create_table "missions", force: :cascade do |t|
-    t.datetime "assigned_at"
-    t.datetime "completed_at"
+    t.datetime "assigned_at",  null: false
+    t.datetime "completed_at", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.datetime "name"
-    t.datetime "weight"
-    t.datetime "condition"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.string   "name",       limit: 255
+    t.decimal  "weight",                 precision: 10, null: false
   end
 
-  create_table "realy_points", force: :cascade do |t|
-    t.datetime "zip"
-    t.datetime "address"
-    t.datetime "longitude"
-    t.datetime "latitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "relay_points", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "zip",        limit: 255, null: false
+    t.string   "address",    limit: 255, null: false
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -66,6 +56,14 @@ ActiveRecord::Schema.define(version: 20160420185950) do
     t.datetime "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "name",        limit: 255,                null: false
+    t.decimal  "price",                   precision: 10, null: false
+    t.string   "description", limit: 255
   end
 
 end

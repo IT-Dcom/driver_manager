@@ -17,7 +17,20 @@
     <div style='height: 1px;' aria-expanded='false' id='navbar'
          class='navbar-collapse collapse'>
       <div class='nav navbar-right'>
-        <a href='/user/profil'>Lairan Alexandre <%= image_tag('avatar64.png', class: %w(livogis-img)) %></a>
+        <% if user_signed_in? %>
+          <a href='/user/profil'><%= current_user.lastname.upcase %>
+                                 <%= current_user.firstname %>
+          </a>
+          <%= link_to 'Déconnexion',
+                      destroy_user_session_path,
+                      method: :delete %>
+        <% else %>
+          <%= link_to 'Connexion', new_user_session_path  %>
+          |
+          <%= link_to 'Inscription', new_user_registration_path  %>
+        <% end %>
+        <%= image_tag 'avatar64.png',
+        class: %w(livogis-img) %>
       </div>
     </div>
   </div>

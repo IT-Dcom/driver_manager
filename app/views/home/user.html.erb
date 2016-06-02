@@ -1,13 +1,12 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-<%= devise_error_messages! %>
+<!-- TODO: A helper to simplify reading -->
 <div class='row livogis-form-espacement'>
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='firstname' class='form-control'
-        value='<%= current_user.firstname %>'>
+        value='<%= current_user.firstname %>' disabled='true'>
       </input>
       <input name='lastname' class='form-control'
-             value='<%= current_user.lastname %>'>
+             value='<%= current_user.lastname %>' disabled='true'>
       </input>
       <span class='input-group-addon'>
         <span class='glyphicon glyphicon-user'></span>
@@ -17,7 +16,7 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='email' class='form-control'
-             value='lairana@free.fr'>
+             value='lairana@free.fr' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon glyphicon-envelope'></span>
         </span>
@@ -27,7 +26,7 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='password' class='form-control' type='password'
-             value='mon_password'>
+             value='mon_password' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon'><i class='fa fa-key'></i></span>
         </span>
@@ -37,7 +36,7 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'
-             value='12 allée des pinsons'>
+             value='12 allée des pinsons' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon glyphicon-home'></span>
         </span>
@@ -47,7 +46,7 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'
-             value='Saint Pathus'>
+             value='Saint Pathus' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon'><i class="fa fa-map-marker"></i></span>
         </span>
@@ -57,46 +56,19 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'
-             value='77178'>
+             value='77178' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon'>ZIP</span>
         </span>
       </input>
     </div>
   </div>
+
+  <div class="col-sm-3" style="margin-left: 10px;margin-top: 5px;">
+    <%=
+      link_to 'Modifier',
+              edit_user_registration_path,
+              class: %w(btn livogis-btn-color)
+    %>
+  </div>
 </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

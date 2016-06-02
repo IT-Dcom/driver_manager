@@ -13,24 +13,26 @@
         <%= image_tag('livogis64.png', class: %w(livogis-img)) %>
       </a>
       <%= link_to 'Livogis', '/', class: %w(navbar-brand livogis-title) %>
+      <span class='navbar-brand livogis-sub-title'>Chauffeurs</span>
     </div>
     <div style='height: 1px;' aria-expanded='false' id='navbar'
          class='navbar-collapse collapse'>
       <div class='nav navbar-right'>
         <% if user_signed_in? %>
+          <%= link_to 'Déconnexion',
+          destroy_user_session_path,
+          method: :delete %>
+          <span style="font-size:24px; color: white">|</span>
           <a href='/user/profil'><%= current_user.lastname.upcase %>
                                  <%= current_user.firstname %>
           </a>
-          <%= link_to 'Déconnexion',
-                      destroy_user_session_path,
-                      method: :delete %>
+          <%= image_tag 'avatar64.png',
+          class: %w(livogis-img) %>
         <% else %>
           <%= link_to 'Connexion', new_user_session_path  %>
-          |
+          <span style="font-size:24px; color: white">|</span>
           <%= link_to 'Inscription', new_user_registration_path  %>
         <% end %>
-        <%= image_tag 'avatar64.png',
-        class: %w(livogis-img) %>
       </div>
     </div>
   </div>

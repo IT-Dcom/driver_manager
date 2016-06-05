@@ -23,11 +23,10 @@
           destroy_user_session_path,
           method: :delete %>
           <span style="font-size:24px; color: white">|</span>
-          <a href='/user/profil'><%= current_user.lastname.upcase %>
-                                 <%= current_user.firstname %>
-          </a>
-          <%= image_tag 'avatar64.png',
-          class: %w(livogis-img) %>
+          <%= link_to "#{current_user.lastname.upcase} "\
+                      "#{current_user.firstname}",
+                      users_path%>
+          <%= image_tag 'avatar64.png', class: %w(livogis-img) %>
         <% else %>
           <%= link_to 'Connexion', new_user_session_path  %>
           <span style="font-size:24px; color: white">|</span>

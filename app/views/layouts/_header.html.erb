@@ -25,7 +25,7 @@
           <span style="font-size:24px; color: white">|</span>
           <%= link_to "#{current_user.lastname.upcase} "\
                       "#{current_user.firstname}",
-                      users_path%>
+                      users_me_path %>
           <%= image_tag 'avatar64.png', class: %w(livogis-img) %>
         <% else %>
           <%= link_to 'Connexion', new_user_session_path  %>

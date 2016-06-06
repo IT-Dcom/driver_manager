@@ -3,10 +3,10 @@
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='firstname' class='form-control'
-        value='<%= current_user.firstname %>' disabled='true'>
+        value='<%= @user.firstname %>' disabled='true'>
       </input>
       <input name='lastname' class='form-control'
-             value='<%= current_user.lastname %>' disabled='true'>
+             value='<%= @user.lastname %>' disabled='true'>
       </input>
       <span class='input-group-addon'>
         <span class='glyphicon glyphicon-user'></span>

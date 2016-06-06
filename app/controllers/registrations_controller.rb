@@ -7,6 +7,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def update
+    # TODO: Edit address
     super
   end
 end

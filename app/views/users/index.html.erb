@@ -1,0 +1,10 @@
+<% @users.each do |user| %>
+  <div class="">
+    <p>Prenom: <%= link_to user.firstname, user_path(user) %></p>
+    <p>Nom: <%= user.lastname %></p>
+    <p>Couriel: <%= user.email %></p>
+  </div>
+  <p>
+    --------------------------------------
+  </p>
+<% end %>

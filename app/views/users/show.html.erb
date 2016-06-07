@@ -26,16 +26,11 @@
       </span>
     </div>
   </div>
-  <div class='col-sm-6'>
-    <div class='input-group'>
-      <input name='email' class='form-control'
-             value='<%= @user.email %>' disabled='true'>
-        <span class='input-group-addon'>
-          <span class='glyphicon glyphicon-envelope'></span>
-        </span>
-      </input>
-    </div>
-  </div>
+  <%= input_field ({ input: [{ name: 'email', value: @user.email,
+                              type: :text_field_tag, disabled: true }],
+                    span: { class1: %w(input-group-addon),
+                            class2: %w(glyphicon glyphicon-envelope) }
+                  }) %>
   <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'

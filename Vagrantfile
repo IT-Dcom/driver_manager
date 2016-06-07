@@ -13,7 +13,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--cpus", "1", "--memory", "512"] #best practice for vagrant is to use 1/4 of the host's memory
+    vb.customize ["modifyvm", :id, "--cpus", "1", "--memory", "1028"] #best practice for vagrant is to use 1/4 of the host's memory
     vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"] #solve Windows Symbolic links issues
   end
 

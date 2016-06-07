@@ -9,16 +9,14 @@ module ApplicationHelper
 
   def input_field(value)
     content_tag :div, class: "col-sm-6" do
-      content_tag :div, class: "input-group" do |t|
-        tmp = value[:input].map do |input|
-          text_field_tag input[:name], input[:value], name: input[:name], class: 'form-control', disabled: input[:disabled]
+      content_tag :div, class: "input-group" do
+        value[:input].map do |input|
+          concat text_field_tag input[:name], input[:value], name: input[:name], class: 'form-control', disabled: input[:disabled]
         end
 
-        tmp << (content_tag :span, nil, class: 'input-group-addon' do
-          content_tag :span, nil, class: value[:span][:class]
+        concat (content_tag :span, nil, class: value[:span][:class1] do
+          content_tag :span, nil, class: value[:span][:class2]
         end)
-
-        tmp.join.html_safe
       end
     end
   end

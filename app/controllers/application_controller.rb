@@ -1,6 +1,6 @@
 #
 class ApplicationController < ActionController::Base
-  @title = "Driver Manager"
+  @title = 'Driver Manager'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception

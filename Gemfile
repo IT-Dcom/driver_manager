@@ -6,6 +6,7 @@ gem 'rails', '4.2.5.1'
 gem 'rake', '11.1.2'
 
 gem 'mysql2'
+gem 'font-awesome-rails'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'

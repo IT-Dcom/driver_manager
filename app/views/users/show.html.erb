@@ -15,8 +15,21 @@
   </div>
   <div class='col-sm-6'>
     <div class='input-group'>
+      <input name='addresse' class='form-control'
+             value='<%= @user.address.address %>' disabled='true'>
+      </input>
+      <input name='addresse' class='form-control'
+             value='<%= @user.address.city %>' disabled='true'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-home'></span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
       <input name='email' class='form-control'
-             value='lairana@free.fr' disabled='true'>
+             value='<%= @user.email %>' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon glyphicon-envelope'></span>
         </span>
@@ -25,38 +38,8 @@
   </div>
   <div class='col-sm-6'>
     <div class='input-group'>
-      <input name='password' class='form-control' type='password'
-             value='mon_password' disabled='true'>
-        <span class='input-group-addon'>
-          <span class='glyphicon'><i class='fa fa-key'></i></span>
-        </span>
-      </input>
-    </div>
-  </div>
-  <div class='col-sm-6'>
-    <div class='input-group'>
       <input name='addresse' class='form-control'
-             value='12 allée des pinsons' disabled='true'>
-        <span class='input-group-addon'>
-          <span class='glyphicon glyphicon-home'></span>
-        </span>
-      </input>
-    </div>
-  </div>
-  <div class='col-sm-6'>
-    <div class='input-group'>
-      <input name='addresse' class='form-control'
-             value='Saint Pathus' disabled='true'>
-        <span class='input-group-addon'>
-          <span class='glyphicon'><i class="fa fa-map-marker"></i></span>
-        </span>
-      </input>
-    </div>
-  </div>
-  <div class='col-sm-6'>
-    <div class='input-group'>
-      <input name='addresse' class='form-control'
-             value='77178' disabled='true'>
+             value='<%= @user.address.zip %>' disabled='true'>
         <span class='input-group-addon'>
           <span class='glyphicon'>ZIP</span>
         </span>

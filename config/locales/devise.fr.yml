@@ -87,6 +87,9 @@ fr:
       new:
         send_me_reset_password_instructions: "Envoyez-moi un courriel pour changer mon mot de passe"
     registrations:
+      user:
+        signed_up: "Bienvenu ! Vous êtes désormais inscrit."
+        updated: "Profil mis à jour"
       edit:
         edit: "Modifier"
         # For "leave blank if you don't want to change it"

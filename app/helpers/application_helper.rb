@@ -27,4 +27,24 @@ module ApplicationHelper
       end
     end
   end
+
+  def input_form(f, value)
+    content_tag :div, class: 'col-sm-6' do
+      content_tag :div, class: 'input-group' do
+        value[:input].map do |input|
+          concat f.text_field input[:name],
+                                input[:value],
+                                name: input[:name],
+                                class: 'form-control',
+                                disabled: input[:disabled]
+        end
+
+        content = content_tag :span, nil, class: value[:span][:class1] do
+          content_tag :span, nil, class: value[:span][:class2]
+        end
+
+        concat content
+      end
+    end
+  end
 end

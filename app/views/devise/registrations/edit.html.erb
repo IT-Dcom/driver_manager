@@ -1,7 +1,8 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 <%= devise_error_messages! %>
+<% puts "hello 2 from #{f}" %>
 <div class='row livogis-form-espacement'>
-  <div class='col-sm-6'>
+  <!-- <div class='col-sm-6'>
     <div class='input-group'>
       <input name='firstname' class='form-control'
         value='<%= current_user.firstname %>'>
@@ -13,8 +14,26 @@
         <span class='glyphicon glyphicon-user'></span>
       </span>
     </div>
-  </div>
-  <div class='col-sm-6'>
+  </div> -->
+
+  <%= input_field(f, {
+            input: [
+              { name: 'firstname',
+                value: current_user.firstname,
+                type: :text,
+                disabled: false
+              },
+              { name: 'lastname',
+                value: current_user.lastname,
+                type: :text,
+                disabled: false}],
+            span: {
+              class1: %w(input-group-addon),
+              class2: %w(glyphicon glyphicon-user)
+            }
+    }) %>
+
+  <!-- <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'
              value='<%= current_user.address.address %>'>
@@ -26,8 +45,26 @@
         <span class='glyphicon glyphicon-home'></span>
       </span>
     </div>
-  </div>
-  <div class='col-sm-6'>
+  </div> -->
+
+  <%= input_field(f, {
+            input: [
+              { name: 'address',
+                value: current_user.address.address,
+                type: :text,
+                disabled: false
+              },
+              { name: 'city',
+                value: current_user.address.city,
+                type: :text,
+                disabled: false}],
+            span: {
+              class1: %w(input-group-addon),
+              class2: %w(glyphicon glyphicon-home)
+            }
+    }) %>
+
+  <!-- <div class='col-sm-6'>
     <div class='input-group'>
       <input name='email' class='form-control'
              value='lairana@free.fr'>
@@ -36,8 +73,22 @@
         <span class='glyphicon glyphicon-envelope'></span>
       </span>
     </div>
-  </div>
-  <div class='col-sm-6'>
+  </div> -->
+
+  <%= input_field(f, {
+            input: [
+              { name: 'email',
+                value: current_user.email,
+                type: :text,
+                disabled: false
+              }],
+            span: {
+              class1: %w(input-group-addon),
+              class2: %w(glyphicon glyphicon-envelope)
+            }
+    }) %>
+
+  <!-- <div class='col-sm-6'>
     <div class='input-group'>
       <input name='addresse' class='form-control'
              value='<%= current_user.address.zip %>'>
@@ -46,7 +97,21 @@
         <span class='glyphicon'>ZIP</span>
       </span>
     </div>
-  </div>
+  </div> -->
+
+  <%= input_field(f, {
+            input: [
+              { name: 'zip',
+                value: current_user.address.zip,
+                type: :text,
+                disabled: false
+              }],
+            span: {
+              class1: %w(input-group-addon),
+              class2: %w(glyphicon glyphicon-envelope)
+            }
+    }) %>
+
   <div class='col-sm-6'>
     <p class="livogis-form-title">
       <strong>Changer de mot de passe?</strong> <br>

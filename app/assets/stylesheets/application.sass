@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
+@import "font-awesome"
 @import "data"
 
 body
@@ -25,5 +26,33 @@ body
   width: 100%
   height: 400px
 
+.livogis-form-espacement
+  margin-bottom: 80px
+
 .livogis-form-espacement > .col-sm-6 > .input-group
   margin: 10px
+
+.livogis-btn-color
+  color: white
+  background-color: $salmon
+  border-color: $salmon - #111
+  &:hover
+    color: white
+    background-color: $salmon + #111
+    border-color: $salmon
+
+.row
+  @extend .row
+  margin-top: 12px
+  margin-bottom: 12px
+
+.livogis-presenter
+  padding: 8px
+  background-color: #ddd
+  border-radius: 10%
+  width: 100%
+  margin-right: 4px
+  margin-bottom: 4px
+
+.livogis-form-title
+  margin-left: 20px

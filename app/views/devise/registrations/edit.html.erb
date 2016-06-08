@@ -1,0 +1,108 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+<%= devise_error_messages! %>
+<div class='row livogis-form-espacement'>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='firstname' class='form-control'
+        value='<%= current_user.firstname %>'>
+      </input>
+      <input name='lastname' class='form-control'
+             value='<%= current_user.lastname %>'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-user'></span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='addresse' class='form-control'
+             value='<%= current_user.address.address %>'>
+      </input>
+      <input name='addresse' class='form-control'
+             value='<%= current_user.address.city %>'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-home'></span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='email' class='form-control'
+             value='lairana@free.fr'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-envelope'></span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='addresse' class='form-control'
+             value='<%= current_user.address.zip %>'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon'>ZIP</span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <p class="livogis-form-title">
+      <strong>Changer de mot de passe?</strong> <br>
+      <i>(Laissez blanc si vous ne voullez pas le changer)</i>
+    </p>
+    <div class='input-group'>
+      <input name='password' class='form-control' type='password'
+             value='' placeholder='Nouveau mot de passe'>
+      </input>
+      <input name='password_confirmation' class='form-control' type='password'
+             value='' placeholder='Confirmer le nouveau mot de passe'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon'><i class='fa fa-key'></i></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div> -->
+<div class="row livogis-form-espacement">
+  <div class="col-sm-5">
+    <%= f.password_field :current_password, autocomplete: "off",
+                         class: %w(form-control), placeholder: 'mot de passe' %>
+  </div>
+  <div class="col-sm-1">
+    <%= f.submit "Valider", class: %w(btn btn-success) %>
+  </div>
+</div>
+<% end %>
+
+<h3>Suppression de compte</h3>
+
+<p><%= button_to "Supprimer mon compte", registration_path(resource_name),
+                 data: { confirm: 'Êtes vous sûr?' }, method: :delete,
+                 class: %w(btn btn-danger) %>
+</p>

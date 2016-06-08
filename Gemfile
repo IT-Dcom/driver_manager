@@ -6,6 +6,7 @@ gem 'rails', '4.2.5.1'
 gem 'rake', '11.1.2'
 
 gem 'mysql2'
+gem 'font-awesome-rails'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -17,6 +18,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 gem 'rubocop'
+
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -15,7 +15,11 @@
                     col-md-12 content'>
           <h2><%= @title %></h2>
           <div class='livogis-content'>
+            <%= render 'layouts/flash_messages' %>
             <%= yield %>
+            <div>
+              <%= link_to "Back", :back, class: %w(btn btn-primary) %>
+            </div>
           </div>
         </div>
       </div>

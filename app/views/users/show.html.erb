@@ -1,0 +1,52 @@
+<!-- TODO: A helper to simplify reading -->
+<div class='row livogis-form-espacement'>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='firstname' class='form-control'
+        value='<%= @user.firstname %>' disabled='true'>
+      </input>
+      <input name='lastname' class='form-control'
+             value='<%= @user.lastname %>' disabled='true'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-user'></span>
+      </span>
+    </div>
+  </div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='addresse' class='form-control'
+             value='<%= @user.address.address %>' disabled='true'>
+      </input>
+      <input name='addresse' class='form-control'
+             value='<%= @user.address.city %>' disabled='true'>
+      </input>
+      <span class='input-group-addon'>
+        <span class='glyphicon glyphicon-home'></span>
+      </span>
+    </div>
+  </div>
+  <%= input_field ({ input: [{ name: 'email', value: @user.email,
+                              type: :text_field_tag, disabled: true }],
+                    span: { class1: %w(input-group-addon),
+                            class2: %w(glyphicon glyphicon-envelope) }
+                  }) %>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input name='addresse' class='form-control'
+             value='<%= @user.address.zip %>' disabled='true'>
+        <span class='input-group-addon'>
+          <span class='glyphicon'>ZIP</span>
+        </span>
+      </input>
+    </div>
+  </div>
+
+  <div class="col-sm-3" style="margin-left: 10px;margin-top: 5px;">
+    <%=
+      link_to 'Modifier',
+              edit_user_registration_path,
+              class: %w(btn livogis-btn-color)
+    %>
+  </div>
+</div>

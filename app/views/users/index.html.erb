@@ -1,0 +1,11 @@
+<div class='row livogis-form-espacement'>
+  <% @users.each do |user| %>
+  <div class='col-sm-4 col-xs-6'>
+    <div class='livogis-presenter'>
+      <p>Prenom: <%= link_to user.firstname, user_path(user) %></p>
+      <p>Nom: <%= user.lastname %></p>
+      <p>Couriel: <%= user.email %></p>
+    </div>
+  </div>
+  <% end %>
+</div>

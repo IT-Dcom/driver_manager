@@ -6,3 +6,14 @@ AllCops:
     - 'Vagrantfile'
     - 'db/schema.rb'
     - 'config/**/*'
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ModuleLength:
+  Max: 128
+
+Metrics/ClassLength:
+  Max: 128
+
+Metrics/AbcSize:
+  Max: 24

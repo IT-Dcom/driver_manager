@@ -43,10 +43,16 @@ ActiveRecord::Schema.define(version: 20160718200103) do
   end
 
   create_table "missions", force: :cascade do |t|
-    t.datetime "assigned_at",  null: false
-    t.datetime "completed_at", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "assigned_at",             null: false
+    t.datetime "completed_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.float    "price",        limit: 53
+  end
+
+  create_table "missions_products", id: false, force: :cascade do |t|
+    t.integer "product_id", limit: 4, null: false
+    t.integer "mission_id", limit: 4, null: false
   end
 
   create_table "products", force: :cascade do |t|
@@ -96,7 +102,7 @@ ActiveRecord::Schema.define(version: 20160718200103) do
     t.datetime "updated_at",                                      null: false
     t.integer  "address_id",             limit: 4
     t.string   "extranet_password",      limit: 255
-    t.string   "password_extranet",      limit: 255
+    t.string   "java_password",          limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
